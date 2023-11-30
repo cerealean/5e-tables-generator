@@ -6,7 +6,7 @@
     "build": "pkgroll",
     "buildWatch": "pkgroll --watch",
     "prestart": "npm run build",
-    "start": "node ./dist/index.js"
+    "start": "node ./dist/index.mjs"
   },
   "type": "module",
   "main": "./dist/index.cjs",
@@ -22,6 +22,14 @@
       "default": "./dist/index.mjs"
     }
   },
+  "imports": {
+    "#core-js": {
+      "node": "core-js"
+    }
+  },
+  "bundledDependencies": [
+    "core-js"
+  ],
   "dependencies": {
     "core-js": "^3.33.3",
     "ts-node": "^10.9.1",
