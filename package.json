@@ -3,41 +3,37 @@
   "private": true,
   "scripts": {
     "prebuild": "rm -rf ./dist",
-    "build": "pkgroll",
-    "buildWatch": "pkgroll --watch",
+    "build": "rollup -c",
+    "buildWatch": "rollup  -c --watch",
     "prestart": "npm run build",
-    "start": "node ./dist/index.mjs"
+    "start": "node ./dist/index.js"
   },
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
-  "exports": {
-    "require": {
-      "types": "./dist/index.d.cts",
-      "default": "./dist/index.cjs"
-    },
-    "import": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
-    }
-  },
-  "imports": {
-    "#core-js": {
-      "node": "core-js"
-    }
-  },
+  "module": "./src/index.ts",
   "bundledDependencies": [
     "core-js"
   ],
   "dependencies": {
-    "core-js": "^3.33.3",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
+    "core-js": "^3.33.3"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-swc": "^0.3.0",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@swc/cli": "^0.1.63",
+    "@swc/core": "^1.3.100",
     "@types/node": "^20.10.1",
-    "pkgroll": "^2.0.1",
-    "tsx": "^4.6.1"
-  }
+    "@types/uglify-js": "^3.17.4",
+    "rollup": "^4.6.1",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "tsx": "^4.6.1",
+    "typescript": "^5.3.2",
+    "uglify-js": "^3.17.4"
+  },
+  "bundleDependencies": [
+    "core-js"
+  ]
 }
