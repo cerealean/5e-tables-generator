@@ -10,9 +10,6 @@
   },
   "type": "module",
   "module": "./src/index.ts",
-  "bundledDependencies": [
-    "core-js"
-  ],
   "dependencies": {
     "core-js": "^3.33.3"
   },
@@ -32,8 +29,5 @@
     "tsx": "^4.6.1",
     "typescript": "^5.3.2",
     "uglify-js": "^3.17.4"
-  },
-  "bundleDependencies": [
-    "core-js"
-  ]
+  }
 }
